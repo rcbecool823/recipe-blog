@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Kitchen That Keeps Growing</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&family=Alata:wght@400&family=Cutive+Mono&display=swap" rel="stylesheet"/>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'BIZ UDPMincho', serif;
+      line-height: 1.6;
+      color: #000;
+      background-color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 100%;
+    }
+
+    /* Desktop overlay message */
+    .desktop-message {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .desktop-message h1 {
+      font-size: 15px;
+      font-family: 'Cutive Mono', monospace;
+      color: #000;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 767px) {
+      .desktop-message {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        display: none;
+      }
+      .desktop-message {
+        display: flex;
+      }
+    }
+
+    /* Home Section 1 */
+    .home-section-1 {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 150px 30px 40px 30px;
+      background-color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .jumbotron-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .main-title-top,
+    .main-title-bottom {
+      font-size: 55px;
+      font-weight: normal;
+      text-align: left;
+      line-height: 65px;
+      color: #000;
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .main-title-top {
+      top: -12%;
+    }
+
+    .main-title-bottom {
+      top: 112%;
+    }
+
+    .hero-image {
+      width: 310px;
+      height: 310px;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0.15em;
+      color: #000;
+      max-width: 250px;
+      font-family: 'Alata', sans-serif;
+      margin-top: 170px;
+    }
+
+    .arrow {
+      font-size: 18px;
+      color: #000;
+      margin-top: 60px;
+    }
+
+    /* Home Section 2 */
+    .home-section-2 {
+      min-height: 100vh;
+      padding: 100px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .recipe-card {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .recipe-image {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .recipe-content {
+      padding: 20px;
+    }
+
+    .recipe-title {
+      font-size: 15px;
+      font-family: 'Alata', sans-serif;
+      line-height: 30px;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .recipe-description {
+      font-size: 13px;
+      font-family: 'Cutive Mono', monospace;
+      line-height: 20px;
+    }
+
+    .placeholder-green,
+    .placeholder-orange {
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-family: 'Alata', sans-serif;
+      line-height: 30px;
+      letter-spacing: 0.08em;
+    }
+
+    .placeholder-green {
+      background-color: #c8e6c9;
+    }
+
+    .placeholder-orange {
+      background-color: #ffb74d;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .main-title-top,
+      .main-title-bottom {
+        font-size: 2.8rem;
+        line-height: 3rem;
+      }
+
+      .home-section-1 {
+        padding: 40px 20px 30px;
+      }
+
+      .home-section-2 {
+        padding: 30px 20px;
+      }
+
+      .hero-image {
+        width: 250px;
+        height: 250px;
+      }
+
+      .recipe-image {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Desktop Message -->
+  <div class="desktop-message">
+    <h1>This is designed for you to view on your phone while you cook ❤️</h1>
+  </div>
+
+  <div class="container">
+    <!-- Home Section 1 -->
+    <section class="home-section-1">
+      <div class="jumbotron-container">
+        <h1 class="main-title-top">The<br>Kitchen</h1>
+        <h1 class="main-title-bottom">That Keeps<br>Growing</h1>
+        <img src="WONTON 1 (6).jpg" alt="Charcuterie board with drinks" class="hero-image"/>
+      </div>
+      <p class="subtitle">a collection of<br>recipes<br>gathered over the<br>years ♡</p>
+      <div class="arrow">↘</div>
+    </section>
+
+    <!-- Home Section 2 -->
+    <section class="home-section-2">
+      <!-- Wonton Soup Card -->
+      <a href="wontonpage.html" class="recipe-card clickable">
+        <img src="WONTON 1 (13).jpg" alt="Wonton Soup" class="recipe-image"/>
+        <div class="recipe-content">
+          <h2 class="recipe-title">Wonton Soup</h2>
+          <p class="recipe-description">Tender pork dumplings with fresh greens for a warm, nourishing meal.</p>
+        </div>
+      </a>
+
+      <!-- Blueberry Chocolate Banana Bread Card -->
+      <div class="recipe-card">
+        <div class="placeholder-green">Coming Soon!</div>
+        <div class="recipe-content">
+          <h2 class="recipe-title">Blueberry Chocolate Banana Bread</h2>
+          <p class="recipe-description">Coming Soon!</p>
+        </div>
+      </div>
+
+      <!-- Misto di Mare Card -->
+      <div class="recipe-card">
+        <div class="placeholder-orange">Kate's Special!</div>
+        <div class="recipe-content">
+          <h2 class="recipe-title">Misto di Mare - "Mix of the Sea"</h2>
+          <p class="recipe-description">Kate's Special!</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
