@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wonton Soup Recipe - The Kitchen That Keeps Growing</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&family=Alata:wght@400&family=Cutive+Mono&display=swap" rel="stylesheet"/>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cutive Mono', monospace;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+      padding: 30px;
+    }
+
+    .recipe-container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #000;
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .back-button:hover {
+      color: #333;
+    }
+
+    .recipe-header {
+      text-align: center;
+      margin: 55px 0;
+    }
+
+    .recipe-title {
+      font-size: 15px;
+      font-weight: normal;
+      font-family: 'Alata', sans-serif;
+      line-height: 30px;
+      letter-spacing: 0.08em;
+    }
+
+    .main-recipe-image,
+    .step-image,
+    .final-dish img {
+      width: calc(100vw - 60px);
+      max-width: none;
+      object-fit: cover;
+      display: block;
+      margin: 35px auto;
+    }
+
+    .main-recipe-image {
+      height: calc((100vw - 60px) * 0.8);
+    }
+
+    .recipe-content {
+      font-size: 13px;
+      line-height: 20px;
+      margin-bottom: 30px;
+      color: #000;
+    }
+
+    .recipe-content p {
+      margin-bottom: 35px;
+    }
+
+    .ingredients-list {
+      margin: 70px 0 70px;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .ingredients-list ul {
+      list-style: none;
+    }
+
+    .ingredients-list li {
+      margin-bottom: 5px;
+    }
+
+    .ingredients-list p {
+      margin-top: 15px;
+    }
+
+    .step-images-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 35px 0;
+    }
+
+    .step-images-grid img {
+      width: 100%;
+      aspect-ratio: 5/4;
+      object-fit: cover;
+    }
+
+    .final-dish {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .final-dish img {
+      height: 250px;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+      body {
+        padding: 15px;
+      }
+      .recipe-title {
+        font-size: 1.5rem;
+      }
+      .step-images-grid {
+        grid-template-columns: 1fr;
+      }
+      .step-images-grid img {
+        height: 180px;
+      }
+    }
+
+    /* Mobile-only message */
+    .desktop-message {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 9999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .desktop-message h1 {
+      font-size: 15px;
+      font-family: 'Cutive Mono', monospace;
+      color: #000;
+      line-height: 1.4;
+    }
+
+    @media (min-width: 768px) {
+      .desktop-message {
+        display: flex;
+      }
+      .recipe-container {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile-only overlay for desktop -->
+  <div class="desktop-message">
+    <h1>This is designed for you to view on your phone while you cook ❤️</h1>
+  </div>
+
+  <div class="recipe-container">
+    <a href="index.html" class="back-button">← Back to Home</a>
+
+    <div class="recipe-header">
+      <h1 class="recipe-title">A warm, nourishing bowl of wonton soup</h1>
+    </div>
+
+    <div class="ingredients-list">
+      <ul>
+        <li>☐ 1 package square wonton wrappers</li>
+        <li>☐ 8 oz. ground pork (fatty preferred)</li>
+        <li>☐ 1 ½ inch ginger root</li>
+        <li>☐ 2 ½ tbsp sesame oil</li>
+        <li>☐ 1 tbsp soy sauce</li>
+        <li>☐ salt</li>
+        <li>☐ black pepper</li>
+        <li>☐ 1 scallion (chopped)</li>
+        <li>☐ 1 egg wash</li>
+      </ul>
+      <p>(Optional) 10 oz. baby bok choy or similar greens</p>
+    </div>
+
+    <img src="WONTON 1 (4).jpg" alt="Finished Wonton Soup" class="main-recipe-image"/>
+
+    <div class="recipe-content">
+      <p>Dunk the ginger root into a bowl of water to soften it and season the water for flavoring the wonton mix. After it has sat for over an hour, finely dice the ginger.</p>
+
+      <p>In a medium bowl, add the finely chopped ginger along with the bowl of water, ground pork, sesame oil, black pepper, soy sauce, and salt. Mix thoroughly until emulsified, almost like a paste.</p>
+
+      <img src="WONTON 1 (5).jpg" alt="Pork mixture preparation" class="step-image"/>
+
+      <p>Fill a small bowl with water. Grab a wrapper and dip your finger in the water to moisten the edges. (Egg wash works too.)</p>
+
+      <div class="step-images-grid">
+        <img src="WONTON 1 (9).jpg" alt="Folding wontons step 1"/>
+        <img src="WONTON 1 (7).jpg" alt="Folding wontons step 2"/>
+      </div>
+
+      <img src="WONTON 1 (3).jpg" alt="Wonton assembly process" class="step-image"/>
+
+      <p>Place about 1 teaspoon of the pork mixture in the center of each wrapper. Avoid overfilling to ensure proper sealing.</p>
+
+      <p>Fold the wrapper in half and press to seal. Bring the back edge toward you and connect the two bottom corners with a dab of water or egg wash.</p>
+
+      <div class="step-images-grid">
+        <img src="WONTON 1 (1).jpg" alt="Folding wontons step 1"/>
+        <img src="WONTON 1 (2).jpg" alt="Folding wontons step 2"/>
+        <img src="WONTON 1 (10).jpg" alt="Folding wontons step 3"/>
+        <img src="WONTON 1 (11).jpg" alt="Folding wontons step 4"/>
+      </div>
+
+      <p>Cook or freeze the wontons immediately. To freeze, place on a lined sheet and freeze until solid before transferring to freezer bags (up to 3 months). No need to thaw before cooking.</p>
+
+      <p>Boil and taste a few wontons to adjust seasoning if needed. Continue assembling until all filling is used, placing wontons on a lined sheet to prevent sticking.</p>
+
+      <img src="WONTON 1 (8).jpg" alt="Wontons cooking in broth" class="step-image"/>
+
+      <p>Bring a pot of water to boil, create a whirlpool, and add the wontons one at a time. Once they float, cook for another 1-2 minutes.</p>
+
+      <img src="WONTON 1 (12).jpg" alt="Cooking wontons step 1" class="step-image"/>
+      <img src="WONTON 1 (14).jpg" alt="Cooking wontons step 2" class="step-image"/>
+
+      <p>Remove with a slotted spoon, place in bowls, pour soup over them, and garnish with scallions, bok choy, soy sauce, sesame oil, and optional chili oil.</p>
+
+      <p>Enjoy ♡</p>
+    </div>
+  </div>
+</body>
+</html>
