@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Kitchen That Keeps Growing</title>
   
-  <!-- Google Fonts -->
+  <!-- Optimized Google Fonts with display=swap for better loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&family=Alata:wght@400&family=Cutive+Mono&display=swap" rel="stylesheet"/>
@@ -33,19 +33,18 @@
       max-width: 100%;
     }
 
-    /* Desktop overlay message */
+    /* Desktop overlay message - Fixed duplicate display issue */
     .desktop-message {
-      display: none;
       position: fixed;
       inset: 0;
       background: #fff;
       z-index: 9999;
-      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 40px;
+      display: none;
     }
 
     .desktop-message h1 {
@@ -70,17 +69,18 @@
       }
     }
 
-    /* Home Section 1 */
+    /* Home Section 1 - Sticky Hero */
     .home-section-1 {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 150px 30px 40px 30px;
+      padding: 100px 25px 40px;
       background-color: #fff;
-      position: relative;
-      z-index: 2;
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
 
     .jumbotron-container {
@@ -91,6 +91,7 @@
       width: 100%;
     }
 
+    /* Consolidated title styles */
     .main-title-top,
     .main-title-bottom {
       font-size: 55px;
@@ -131,18 +132,33 @@
     }
 
     .arrow {
-      font-size: 18px;
+      font-size: 22px;
       color: #000;
       margin-top: 60px;
+      animation: float 2s ease-in-out infinite;
+      will-change: transform; /* Optimize animation performance */
     }
 
-    /* Home Section 2 */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Home Section 2 - Scrolling Content */
     .home-section-2 {
-      min-height: 100vh;
-      padding: 100px 30px 40px;
+      min-height: 200vh;
+      padding: 100px 25px 110px;
       display: flex;
       flex-direction: column;
       gap: 50px;
+      background-color: #fff;
+      position: relative;
+      z-index: 2;
+      margin-top: 50vh;
     }
 
     .recipe-card {
@@ -152,6 +168,7 @@
       overflow: hidden;
       text-decoration: none;
       color: inherit;
+      will-change: transform; /* Optimize hover animation */
     }
 
     .recipe-card:hover {
@@ -183,6 +200,7 @@
       line-height: 20px;
     }
 
+    /* Consolidated placeholder styles */
     .placeholder-green,
     .placeholder-orange {
       height: 600px;
@@ -212,11 +230,12 @@
       }
 
       .home-section-1 {
-        padding: 40px 20px 30px;
+        padding: 40px 25px 30px;
       }
 
       .home-section-2 {
-        padding: 30px 20px;
+        padding: 30px 25px 100px;
+        margin-top: 50vh;
       }
 
       .hero-image {
@@ -242,7 +261,7 @@
       <div class="jumbotron-container">
         <h1 class="main-title-top">The<br>Kitchen</h1>
         <h1 class="main-title-bottom">That Keeps<br>Growing</h1>
-        <img src="WONTON 1 (6).jpg" alt="Charcuterie board with drinks" class="hero-image"/>
+        <img src="WONTON 1 (6).jpg" alt="Charcuterie board with drinks" class="hero-image" loading="lazy"/>
       </div>
       <p class="subtitle">a collection of<br>recipes<br>gathered over the<br>years ♡</p>
       <div class="arrow">↘</div>
@@ -251,8 +270,8 @@
     <!-- Home Section 2 -->
     <section class="home-section-2">
       <!-- Wonton Soup Card -->
-      <a href="wontonpage.html" class="recipe-card clickable">
-        <img src="WONTON 1 (13).jpg" alt="Wonton Soup" class="recipe-image"/>
+      <a href="wontonpage.html" class="recipe-card">
+        <img src="WONTON 1 (13).jpg" alt="Wonton Soup" class="recipe-image" loading="lazy"/>
         <div class="recipe-content">
           <h2 class="recipe-title">Wonton Soup</h2>
           <p class="recipe-description">Tender pork dumplings with fresh greens for a warm, nourishing meal.</p>
